@@ -11,12 +11,12 @@ rather textually unstable entitiy.
 ### Must Have (MVP)
 * Be able to give the program two Hamlet playtexts (raw text files) and have it:
   1. Standardise the character names, whitespace and any other data we <i>don't</i> want it to compare.
-  2. Output a html file which dispays the differences to the texts.
+  2. Output a html file which displays the differences to the texts.
 * Be fully tested using automated testing. Built using TDD, as much as possible.
 
 ### Should Have
 * Ability to manage the full Shakespeare dramatic corpus. A user should be able to pick which play they wish to compare and the program will standardise it.
-* Ability for the user can select what whether they can see word differences or punctation differences. These differences should be be indicated visually using textual display.
+* Ability for the user to select whether they can see word differences or punctation differences. These differences should be be indicated visually using textual display.
 
 ### Could Have (Longer Term Additional Features)
 * GUI or <i>minimal</i> cli tool to enable a lay tech user to run on their computer and display the html in their browser.
