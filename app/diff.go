@@ -66,21 +66,24 @@ const (
 )
 
 func main() {
-	toHTML(compare(), "test")
+	// toHTML(compare(text1, text2), "test")
+	fmt.Println(compare(text1, text2))
 }
 
-func compare() []diffmatchpatch.Diff {
+func compare(textA string, textB string) (diffs []diffmatchpatch.Diff, err error) {
 	dmp := diffmatchpatch.New()
 
-	diffs := dmp.DiffMain(text1, text2, false)
+	diffs, err = dmp.DiffMain(textA, textB, false), err
+	if err != nil {
+		fmt.Println("Diff failed", err)
+	}
+	return diffs, err
+	// fmt.Println(diffs)
 
-	fmt.Println(diffs)
+	// fmt.Println(dmp.DiffPrettyText(diffs))
 
-	fmt.Println(dmp.DiffPrettyText(diffs))
+	// fmt.Println(dmp.DiffPrettyHtml(diffs))
 
-	fmt.Println(dmp.DiffPrettyHtml(diffs))
-
-	return diffs
 }
 
 func toHTML(diffData []diffmatchpatch.Diff, fileName string) {
